@@ -1,0 +1,50 @@
+:root {
+  --primary-blue: #0d47a1;
+  --primary-blue-light: #1565c0;
+  --primary-blue-soft: #eaf2ff;
+
+  --accent-orange: #ff9800;
+  --accent-orange-light: #ffe0b2;
+
+  --success-green: #4caf50;
+  --success-green-light: #e8f5e9;
+
+  --purple-card: #5e35b1;
+  --purple-card-light: #ede7f6;
+
+  --cyan-card: #0097a7;
+  --cyan-card-light: #e0f7fa;
+
+  --background-main: #f5f7fa;
+  --background-card: #ffffff;
+  --background-footer: #0b2e68;
+
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-light: #ffffff;
+  --text-muted: #94a3b8;
+
+  --border-color: #dce3ec;
+  --shadow-soft: rgba(15, 23, 42, 0.08);
+
+  --card-blue: #1976d2;
+  --card-blue-soft: #e3f2fd;
+
+  --card-orange: #fb8c00;
+  --card-orange-soft: #fff3e0;
+
+  --card-green: #43a047;
+  --card-green-soft: #e8f5e9;
+
+  --card-purple: #673ab7;
+  --card-purple-soft: #ede7f6;
+
+  --card-cyan: #00acc1;
+  --card-cyan-soft: #e0f7fa;
+
+  --button-primary: #ff9800;
+  --button-primary-hover: #f57c00;
+
+  --button-secondary: #1565c0;
+  --button-secondary-hover: #0d47a1;
+}
