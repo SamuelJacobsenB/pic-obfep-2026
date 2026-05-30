@@ -1,6 +1,7 @@
 *,
 *::before,
 *::after {
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -18,11 +19,6 @@ button {
   cursor: pointer;
   background: none;
   border: none;
-}
-
-*:focus-visible {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 2px;
 }
 
 ul,
