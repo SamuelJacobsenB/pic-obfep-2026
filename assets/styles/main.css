@@ -15,3 +15,13 @@ body {
   background-color: var(--background-main);
   padding: 2rem;
 }
+
+@media (max-width: 520px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .content {
+    margin-top: 80px;
+  }
+}

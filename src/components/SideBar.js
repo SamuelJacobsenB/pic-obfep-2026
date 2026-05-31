@@ -24,55 +24,61 @@ class SideBar extends HTMLElement {
       <style>
         .sidebar {
           position: sticky;
-          top: 0;
+          top: 85px;
           left: 0;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 1rem;
+          gap: 2rem;
           background-color: var(--background-card);
-          padding: 1rem 0.2rem;
-          width: 150px;
+          padding: 0 0.2rem;
+          width: 100px;
           height: calc(100vh - 85px);
           box-shadow: 0 4px 4px var(--shadow-soft);
         }
 
-        @media (max-width: 520px) {
+        @media (max-width: 750px) {
           .sidebar {
+            position: fixed;
+            top: 100px;
             flex-direction: row;
-            justify-content: center;
-            padding: 0.5rem 2rem;
+            width: 100%;
+            height: 80px;
           }
         }
       </style>
 
       <nav class="sidebar">
         <app-step-item
+          id="1"
           href="#material"
-          active="true"
-          disabled=${!stepsStore.material}
-          background-color="var(--primary-blue-soft)"
           color="var(--primary-blue)"
-          icon="../../assets/images/building.png"
+          icon="./assets/icons/building.svg"
         ></app-step-item>
 
         <app-step-item
+          id="2"
           href="#dilation-type"
-          active
-          disabled=${!stepsStore.dilationType}
+          color="var(--primary-blue)"
+          icon="./assets/icons/building.svg"
+          disabled=${!stepsStore.value.dilationType}
         ></app-step-item>
 
         <app-step-item
+          id="3"
           href="#parameters"
-          active
-          disabled=${!stepsStore.parameters}
+          color="var(--primary-blue)"
+          icon="./assets/icons/building.svg"
+          disabled=${!stepsStore.value.parameters}
         ></app-step-item>
 
         <app-step-item
+          id="4"
           href="#results"
-          active
-          disabled=${!stepsStore.results}
+          color="var(--primary-blue)"
+          icon="./assets/icons/building.svg"
+          disabled=${!stepsStore.value.results}
         ></app-step-item>
       </nav>
     `;

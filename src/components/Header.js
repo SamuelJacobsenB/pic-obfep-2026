@@ -34,7 +34,7 @@ class Header extends HTMLElement {
           color: var(--text-light);
         }
 
-        @media (max-width: 520px) {
+        @media (max-width: 750px) {
           .header {
             height: 100px;
           }
