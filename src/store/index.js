@@ -2,12 +2,7 @@ import { signal } from "../lib/signal.js";
 
 export const currentStepStore = signal(1);
 
-export const stepsStore = signal({
-  material: false,
-  dilationType: false,
-  parameters: false,
-  results: false,
-});
+export const stepsStore = signal(5);
 
 export const materialStore = signal(null);
 

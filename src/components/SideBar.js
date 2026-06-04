@@ -60,25 +60,29 @@ class SideBar extends HTMLElement {
         <app-step-item
           id="2"
           href="#dilation-type"
-          color="var(--primary-blue)"
-          icon="./assets/icons/building.svg"
-          disabled=${!stepsStore.value.dilationType}
+          color="var(--accent-orange)"
+          icon="./assets/icons/expand.svg"
         ></app-step-item>
 
         <app-step-item
           id="3"
           href="#parameters"
-          color="var(--primary-blue)"
-          icon="./assets/icons/building.svg"
-          disabled=${!stepsStore.value.parameters}
+          color="var(--success-green)"
+          icon="./assets/icons/temperature.svg"
         ></app-step-item>
 
         <app-step-item
           id="4"
           href="#results"
-          color="var(--primary-blue)"
-          icon="./assets/icons/building.svg"
-          disabled=${!stepsStore.value.results}
+          color="var(--purple-card)"
+          icon="./assets/icons/result.svg"
+        ></app-step-item>
+
+        <app-step-item
+          id="5"
+          href="#calculation"
+          color="var(--cyan-card)"
+          icon="./assets/icons/calculation.svg"
         ></app-step-item>
       </nav>
     `;

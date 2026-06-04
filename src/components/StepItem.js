@@ -1,39 +1,48 @@
-import { currentStepStore } from "../store/index.js";
+import { currentStepStore, stepsStore } from "../store/index.js";
 import { html } from "../utils/html.js";
 
 class StepItem extends HTMLElement {
   static get observedAttributes() {
-    return ["id", "href", "color", "icon", "disabled"];
+    return ["id", "href", "color", "icon"];
   }
 
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    this.unsubscribers = [];
   }
 
   connectedCallback() {
     this.render();
+
+    this.unsubscribers.push(
+      currentStepStore.subscribe(() => this.render()),
+      stepsStore.subscribe(() => this.render()),
+    );
   }
 
   attributeChangedCallback() {
     this.render();
-
-    this.unsubscribe = currentStepStore.subscribe(() => {
-      this.render();
-    });
   }
 
   disconnectedCallback() {
-    this.unsubscribe();
+    this.unsubscribers.forEach((unsubscribe) => unsubscribe());
   }
 
   render() {
+    const id = Number(this.getAttribute("id"));
     const href = this.getAttribute("href");
     const color = this.getAttribute("color");
     const icon = this.getAttribute("icon");
 
-    const active = currentStepStore.value === Number(this.getAttribute("id"));
-    const disabled = this.hasAttribute("disabled");
+    const active = currentStepStore.value === id;
+    const disabled = id > stepsStore.value;
+
+    if (disabled) {
+      this.setAttribute("disabled", "");
+    } else {
+      this.removeAttribute("disabled");
+    }
 
     this.shadowRoot.innerHTML = html`
       <style>
@@ -112,18 +121,13 @@ class StepItem extends HTMLElement {
         }
       </style>
 
-      <a
-        href=${href}
-        class="step-item ${active ? "active" : ""}"
-        aria-disabled="${disabled}"
-      >
+      <a href=${href} class="step-item ${active ? "active" : ""}">
         <span class="step-icon"></span>
       </a>
     `;
 
     const stepItem = this.shadowRoot.querySelector("a");
-    stepItem.addEventListener("click", (e) => {
-      e.preventDefault();
+    stepItem.addEventListener("click", () => {
       currentStepStore.value = Number(this.getAttribute("id"));
     });
   }
