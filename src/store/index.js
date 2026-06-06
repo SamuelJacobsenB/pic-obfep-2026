@@ -1,8 +1,8 @@
 import { signal } from "../lib/signal.js";
 
-export const currentStepStore = signal(1);
+export const currentStepStore = signal(0);
 
-export const stepsStore = signal(5);
+export const stepsStore = signal(4);
 
 export const materialStore = signal(null);
 

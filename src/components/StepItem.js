@@ -1,9 +1,10 @@
 import { currentStepStore, stepsStore } from "../store/index.js";
+import { ITEM_INFO } from "../utils/constants.js";
 import { html } from "../utils/html.js";
 
 class StepItem extends HTMLElement {
   static get observedAttributes() {
-    return ["id", "href", "color", "icon"];
+    return ["index"];
   }
 
   constructor() {
@@ -30,13 +31,11 @@ class StepItem extends HTMLElement {
   }
 
   render() {
-    const id = Number(this.getAttribute("id"));
-    const href = this.getAttribute("href");
-    const color = this.getAttribute("color");
-    const icon = this.getAttribute("icon");
+    const index = Number(this.getAttribute("index"));
+    const { href, icon, color } = ITEM_INFO[index];
 
-    const active = currentStepStore.value === id;
-    const disabled = id > stepsStore.value;
+    const active = currentStepStore.value === index;
+    const disabled = index > stepsStore.value;
 
     if (disabled) {
       this.setAttribute("disabled", "");
@@ -128,7 +127,7 @@ class StepItem extends HTMLElement {
 
     const stepItem = this.shadowRoot.querySelector("a");
     stepItem.addEventListener("click", () => {
-      currentStepStore.value = Number(this.getAttribute("id"));
+      currentStepStore.value = index;
     });
   }
 }

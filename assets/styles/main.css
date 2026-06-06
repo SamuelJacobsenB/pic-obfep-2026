@@ -16,7 +16,7 @@ body {
   padding: 2rem;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 750px) {
   .layout {
     flex-direction: column;
   }
