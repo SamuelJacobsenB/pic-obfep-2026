@@ -1,6 +1,6 @@
-import { currentStepStore, stepsStore } from "../store/index.js";
-import { ITEM_INFO } from "../utils/constants.js";
-import { html } from "../utils/html.js";
+import { currentStepStore, stepsStore } from "../../store/index.js";
+import { ITEM_INFO } from "../../utils/constants.js";
+import { html } from "../../utils/html.js";
 
 class StepItem extends HTMLElement {
   static get observedAttributes() {

@@ -1,5 +1,5 @@
-import { stepsStore } from "../store/index.js";
-import { html } from "../utils/html.js";
+import { stepsStore } from "../../store/index.js";
+import { html } from "../../utils/html.js";
 
 class SideBar extends HTMLElement {
   constructor() {
@@ -23,6 +23,7 @@ class SideBar extends HTMLElement {
     this.shadowRoot.innerHTML = html`
       <style>
         .sidebar {
+          z-index: 10;
           position: sticky;
           top: 85px;
           left: 0;

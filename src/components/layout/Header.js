@@ -1,4 +1,4 @@
-import { html } from "../utils/html.js";
+import { html } from "../../utils/html.js";
 
 class Header extends HTMLElement {
   constructor() {
@@ -10,6 +10,7 @@ class Header extends HTMLElement {
     this.shadowRoot.innerHTML = html`
       <style>
         .header {
+          z-index: 10;
           position: sticky;
           top: 0;
           display: flex;
