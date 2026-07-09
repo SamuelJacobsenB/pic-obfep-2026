@@ -27,15 +27,20 @@ class SideBar extends HTMLElement {
           position: sticky;
           top: 85px;
           left: 0;
+
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           gap: 2rem;
+
           background-color: var(--background-card);
-          padding: 0 0.2rem;
+
           width: 100px;
           height: calc(100vh - 85px);
+
+          padding: 0 0.2rem;
+
           box-shadow: 0 4px 4px var(--shadow-soft);
         }
 
@@ -43,7 +48,9 @@ class SideBar extends HTMLElement {
           .sidebar {
             position: fixed;
             top: 100px;
+
             flex-direction: row;
+
             width: 100%;
             height: 80px;
           }

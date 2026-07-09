@@ -52,8 +52,11 @@ class Card extends HTMLElement {
           flex-direction: column;
           align-items: center;
           gap: 32px;
+
           min-height: calc(100vh - 75px);
-          padding: 48px 24px;
+
+          padding: 2rem 1rem;
+
           animation: fadeIn 0.25s ease;
         }
 
@@ -62,7 +65,9 @@ class Card extends HTMLElement {
           flex-direction: column;
           align-items: center;
           gap: 18px;
+
           text-align: center;
+
           max-width: 700px;
         }
 
@@ -70,10 +75,14 @@ class Card extends HTMLElement {
           display: flex;
           justify-content: center;
           align-items: center;
+
           width: 88px;
           height: 88px;
-          border-radius: 50%;
+
           background: ${color};
+
+          border-radius: 50%;
+
           box-shadow:
             0 8px 24px rgba(0, 0, 0, 0.12),
             0 2px 6px rgba(0, 0, 0, 0.08);
@@ -82,28 +91,41 @@ class Card extends HTMLElement {
         .card-icon {
           width: 42px;
           height: 42px;
+
           background-color: white;
+
           mask: url("${icon}") center / contain no-repeat;
           -webkit-mask: url("${icon}") center / contain no-repeat;
         }
 
         .card-title {
-          font-size: clamp(2rem, 4vw, 2.75rem);
           color: var(--text-primary);
+
+          font-size: clamp(2rem, 4vw, 2.75rem);
+
           margin: 0;
         }
 
         .card-description {
-          font-size: 1rem;
           color: var(--text-secondary);
+
+          font-size: 1rem;
           line-height: 1.6;
+
           max-width: 600px;
+
           margin: 0;
         }
 
         .card-content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 2rem;
+
           width: 100%;
-          max-width: 1000px;
+          max-width: 1200px;
         }
 
         @keyframes fadeIn {
@@ -120,9 +142,11 @@ class Card extends HTMLElement {
 
         @media (max-width: 750px) {
           .card {
-            min-height: calc(100vh - 180px);
-            padding: 32px 16px;
             gap: 24px;
+
+            min-height: calc(100vh - 180px);
+
+            padding: 0.4rem 0.2rem;
           }
 
           .card-icon-wrapper {

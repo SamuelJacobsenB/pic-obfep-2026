@@ -1,5 +1,5 @@
 import { materialStore, stepsStore } from "../../../store/index.js";
-import { ITEM_INFO, MATERIALS } from "../../../utils/constants.js";
+import { MATERIALS } from "../../../utils/constants.js";
 import { html } from "../../../utils/html.js";
 
 class MaterialCard extends HTMLElement {
@@ -24,8 +24,6 @@ class MaterialCard extends HTMLElement {
   }
 
   render() {
-    const { id, title, description, icon, color } = ITEM_INFO[this.index];
-
     this.shadowRoot.innerHTML = html`
       <style>
         .card-items {
@@ -33,7 +31,8 @@ class MaterialCard extends HTMLElement {
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-          gap: 2rem;
+          gap: 1.2rem;
+
           width: 100%;
         }
       </style>
@@ -51,6 +50,8 @@ class MaterialCard extends HTMLElement {
             )
             .join("")}
         </section>
+
+        <material-info-card></material-info-card>
       </app-card>
     `;
   }

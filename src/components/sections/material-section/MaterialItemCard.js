@@ -44,52 +44,66 @@ class MaterialItemCard extends HTMLElement {
       <style>
         .item-card {
           position: relative;
+
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 1rem;
+          gap: 1.2em;
+
           background-color: white;
-          width: clamp(150px, 20vw, 160px);
-          height: clamp(225px, 20vw, 250px);
+
+          width: clamp(40px, 20vw, 80px);
+          height: clamp(80px, 20vh, 140px);
+
           padding: 0.5rem 1rem;
+
           border: 1px solid white;
           border-radius: 0.5rem;
+
           box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+
           cursor: pointer;
           transition: all 0.2s ease;
         }
 
         .item-card:hover,
         .item-card.selected {
-          transform: translateY(-5px);
           background: rgb(21 101 192 / 10%);
           border-color: var(--primary-blue);
+
           box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+
+          transform: translateY(-5px);
         }
 
         img {
-          width: clamp(80px, 20vw, 100px);
-          height: clamp(80px, 20vw, 100px);
+          width: clamp(40px, 20vw, 60px);
+          height: clamp(40px, 20vw, 60px);
         }
 
         .name {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
         }
 
         .check {
           position: absolute;
           top: 0.5rem;
           right: 0.5rem;
+
           display: ${this.selected ? "flex" : "none"};
           justify-content: center;
           align-items: center;
+
           width: 24px;
           height: 24px;
-          border-radius: 50%;
-          background: var(--primary-blue);
+
+          background-color: var(--primary-blue);
           color: white;
+
           font-weight: bold;
+
+          border-radius: 50%;
         }
       </style>
 
@@ -102,6 +116,7 @@ class MaterialItemCard extends HTMLElement {
 
     this.shadowRoot.querySelector(".item-card").onclick = () => {
       materialStore.value = material;
+      window.location.href = "#material-info-card";
     };
   }
 }

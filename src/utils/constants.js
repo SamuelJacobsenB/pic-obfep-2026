@@ -2,20 +2,127 @@ export const MATERIALS = {
   STEEL: {
     id: "steel",
     name: "Aço",
+
     linear_coefficient: 1.2e-5,
-    melting_point: 1510, // em Celsius
-    base_color: "#7a7a7a",
+    melting_point: 1425,
+    boiling_point: 3000,
+
+    base_color: "#6B7280",
+
     icon: "../assets/icons/materials/steel.svg",
     texture: "../assets/textures/steel.png",
   },
+
   ALUMINUM: {
     id: "aluminum",
     name: "Alumínio",
+
     linear_coefficient: 2.3e-5,
     melting_point: 660,
-    base_color: "#d1d5db",
+    boiling_point: 2470,
+
+    base_color: "#D1D5DB",
+
     icon: "../assets/icons/materials/steel.svg",
     texture: "../assets/textures/aluminum.png",
+  },
+
+  COPPER: {
+    id: "copper",
+    name: "Cobre",
+
+    linear_coefficient: 1.7e-5,
+    melting_point: 1085,
+    boiling_point: 2562,
+
+    base_color: "#B87333",
+
+    icon: "../assets/icons/materials/steel.svg",
+    texture: "../assets/textures/copper.png",
+  },
+
+  IRON: {
+    id: "iron",
+    name: "Ferro",
+
+    linear_coefficient: 1.1e-5,
+    melting_point: 1200,
+    boiling_point: 2860,
+
+    base_color: "#4B5563",
+
+    icon: "../assets/icons/materials/steel.svg",
+    texture: "../assets/textures/iron.png",
+  },
+
+  CONCRETE: {
+    id: "concrete",
+    name: "Concreto",
+
+    linear_coefficient: 1.0e-5,
+    melting_point: null,
+    boiling_point: null,
+
+    base_color: "#A8A29E",
+
+    icon: "../assets/icons/materials/steel.svg",
+    texture: "../assets/textures/concrete.png",
+  },
+
+  GLASS: {
+    id: "glass",
+    name: "Vidro",
+
+    linear_coefficient: 9.0e-6,
+    melting_point: 1400,
+    boiling_point: 2200,
+
+    base_color: "#81D4FA",
+
+    icon: "../assets/icons/materials/steel.svg",
+    texture: "../assets/textures/glass.png",
+  },
+
+  GRANITE: {
+    id: "granite",
+    name: "Granito",
+
+    linear_coefficient: 7.9e-6,
+    melting_point: 1215,
+    boiling_point: null,
+
+    base_color: "#757575",
+
+    icon: "../assets/icons/materials/steel.svg",
+    texture: "../assets/textures/granite.png",
+  },
+
+  WOOD: {
+    id: "wood",
+    name: "Madeira",
+
+    linear_coefficient: 3.5e-6,
+    melting_point: null,
+    boiling_point: null,
+
+    base_color: "#8D6E63",
+
+    icon: "../assets/icons/materials/steel.svg",
+    texture: "../assets/textures/wood.png",
+  },
+
+  PVC: {
+    id: "pvc",
+    name: "PVC",
+
+    linear_coefficient: 7.0e-5,
+    melting_point: 100,
+    boiling_point: null,
+
+    base_color: "#ECEFF1",
+
+    icon: "../assets/icons/materials/steel.svg",
+    texture: "../assets/textures/pvc.png",
   },
 };
 
