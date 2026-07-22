@@ -1,4 +1,4 @@
-import { materialStore } from "../../../store/index.js";
+import { materialStore, stepsStore } from "../../../store/index.js";
 import { MATERIALS } from "../../../utils/constants.js";
 import { html } from "../../../utils/html.js";
 
@@ -23,12 +23,15 @@ class MaterialItemCard extends HTMLElement {
   }
 
   connectedCallback() {
-    this.unsubscribe = materialStore.subscribe(() => this.render());
+    this.unsubscribers = [
+      materialStore.subscribe(() => this.render()),
+      stepsStore.subscribe(() => this.render()),
+    ];
     this.render();
   }
 
   disconnectedCallback() {
-    this.unsubscribe?.();
+    this.unsubscribers.forEach((unsubscribe) => unsubscribe());
   }
 
   attributeChangedCallback() {
@@ -114,10 +117,15 @@ class MaterialItemCard extends HTMLElement {
       </div>
     `;
 
-    this.shadowRoot.querySelector(".item-card").onclick = () => {
-      materialStore.value = material;
-      window.location.href = "#material-info-card";
-    };
+    this.shadowRoot
+      .querySelector(".item-card")
+      .addEventListener("click", () => {
+        materialStore.value = material;
+
+        if (stepsStore.value < 1) {
+          stepsStore.value = 1;
+        }
+      });
   }
 }
 

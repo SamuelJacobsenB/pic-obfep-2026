@@ -32,7 +32,7 @@ class StepItem extends HTMLElement {
 
   render() {
     const index = Number(this.getAttribute("index"));
-    const { href, icon, color } = ITEM_INFO[index];
+    const { id, icon, color } = ITEM_INFO[index];
 
     const active = currentStepStore.value === index;
     const disabled = index > stepsStore.value;
@@ -76,6 +76,8 @@ class StepItem extends HTMLElement {
             background-color 0.2s ease,
             transform 0.2s ease,
             box-shadow 0.2s ease;
+
+          cursor: pointer;
         }
 
         .step-item:hover {
@@ -120,15 +122,24 @@ class StepItem extends HTMLElement {
         }
       </style>
 
-      <a href=${href} class="step-item ${active ? "active" : ""}">
+      <a class="step-item ${active ? "active" : ""}">
         <span class="step-icon"></span>
       </a>
     `;
 
-    const stepItem = this.shadowRoot.querySelector("a");
-    stepItem.addEventListener("click", () => {
-      currentStepStore.value = index;
-    });
+    this.shadowRoot
+      .querySelector(".step-item")
+      .addEventListener("click", () => {
+        currentStepStore.value = index;
+
+        const section = document.querySelector(`section#${id}`);
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
   }
 }
 

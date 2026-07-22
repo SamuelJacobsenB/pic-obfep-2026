@@ -32,7 +32,7 @@ class MaterialInfoCard extends HTMLElement {
         .info-card {
           display: flex;
           flex-direction: column;
-          gap: 0.6rem;
+          gap: 0.8rem;
 
           background-color: rgba(21, 101, 192, 0.1);
 
@@ -56,7 +56,7 @@ class MaterialInfoCard extends HTMLElement {
           justify-content: space-around;
           align-items: center;
           flex-wrap: wrap;
-          gap: 1rem;
+          gap: 3rem;
         }
 
         .material-properties > span {

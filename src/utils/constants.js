@@ -55,20 +55,6 @@ export const MATERIALS = {
     texture: "../assets/textures/iron.png",
   },
 
-  CONCRETE: {
-    id: "concrete",
-    name: "Concreto",
-
-    linear_coefficient: 1.0e-5,
-    melting_point: null,
-    boiling_point: null,
-
-    base_color: "#A8A29E",
-
-    icon: "../assets/icons/materials/steel.svg",
-    texture: "../assets/textures/concrete.png",
-  },
-
   GLASS: {
     id: "glass",
     name: "Vidro",
@@ -81,34 +67,6 @@ export const MATERIALS = {
 
     icon: "../assets/icons/materials/steel.svg",
     texture: "../assets/textures/glass.png",
-  },
-
-  GRANITE: {
-    id: "granite",
-    name: "Granito",
-
-    linear_coefficient: 7.9e-6,
-    melting_point: 1215,
-    boiling_point: null,
-
-    base_color: "#757575",
-
-    icon: "../assets/icons/materials/steel.svg",
-    texture: "../assets/textures/granite.png",
-  },
-
-  WOOD: {
-    id: "wood",
-    name: "Madeira",
-
-    linear_coefficient: 3.5e-6,
-    melting_point: null,
-    boiling_point: null,
-
-    base_color: "#8D6E63",
-
-    icon: "../assets/icons/materials/steel.svg",
-    texture: "../assets/textures/wood.png",
   },
 
   PVC: {
@@ -131,7 +89,6 @@ export const ITEM_INFO = [
     id: "material",
     title: "Material",
     description: "Escolha o material do objeto a ser dilatado.",
-    href: "#material",
     color: "var(--primary-blue)",
     icon: "./assets/icons/building.svg",
   },
@@ -140,7 +97,6 @@ export const ITEM_INFO = [
     id: "dilation-type",
     title: "Tipo de Dilatação",
     description: "Selecione o tipo de dilatação que deseja calcular.",
-    href: "#dilation-type",
     color: "var(--accent-orange)",
     icon: "./assets/icons/expand.svg",
   },
@@ -150,7 +106,6 @@ export const ITEM_INFO = [
     title: "Parâmetros",
     description:
       "Insira os parâmetros necessários para o cálculo da dilatação.",
-    href: "#parameters",
     color: "var(--success-green)",
     icon: "./assets/icons/temperature.svg",
   },
@@ -160,7 +115,6 @@ export const ITEM_INFO = [
     title: "Resultados",
     description:
       "Veja os resultados do cálculo da dilatação com base nos parâmetros fornecidos.",
-    href: "#results",
     color: "var(--purple-card)",
     icon: "./assets/icons/result.svg",
   },
@@ -170,8 +124,9 @@ export const ITEM_INFO = [
     title: "Cálculo Detalhado",
     description:
       "Acesse um passo a passo detalhado do cálculo da dilatação para entender melhor o processo.",
-    href: "#calculation",
     color: "var(--cyan-card)",
     icon: "./assets/icons/calculation.svg",
   },
 ];
+
+export const DILATATION_TYPES = ["linear", "superficial", "volumetric"];
