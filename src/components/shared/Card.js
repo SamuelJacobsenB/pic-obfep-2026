@@ -29,6 +29,8 @@ class Card extends HTMLElement {
     const index = Number(this.getAttribute("index"));
     const { id, title, description, icon, color } = ITEM_INFO[index];
 
+    const currentMaterial = ITEM_INFO[currentStepStore.value];
+
     const disabled = index > stepsStore.value;
 
     if (disabled) {
@@ -48,23 +50,60 @@ class Card extends HTMLElement {
         }
 
         .card {
+          position: relative;
+
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 32px;
+          gap: 2rem;
 
           min-height: calc(100vh - 75px);
 
-          padding: 2rem 1rem;
+          padding: 2rem 3rem;
 
           animation: fadeIn 0.25s ease;
+        }
+
+        .card::before,
+        .card::after {
+          content: "";
+
+          position: absolute;
+          top: 0;
+          bottom: 0;
+
+          width: 140px;
+
+          pointer-events: none;
+
+          opacity: 0.08;
+        }
+
+        .card::before {
+          left: 0;
+
+          background: linear-gradient(
+            to right,
+            ${currentMaterial.color} 0%,
+            transparent 100%
+          );
+        }
+
+        .card::after {
+          right: 0;
+
+          background: linear-gradient(
+            to left,
+            ${currentMaterial.color} 0%,
+            transparent 100%
+          );
         }
 
         .card-header {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 18px;
+          gap: 1rem;
 
           text-align: center;
 
@@ -122,7 +161,7 @@ class Card extends HTMLElement {
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          gap: 2rem;
+          gap: 1rem;
 
           width: 100%;
           max-width: 1200px;

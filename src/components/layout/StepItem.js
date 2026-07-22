@@ -130,15 +130,10 @@ class StepItem extends HTMLElement {
     this.shadowRoot
       .querySelector(".step-item")
       .addEventListener("click", () => {
-        currentStepStore.value = index;
-
-        const section = document.querySelector(`section#${id}`);
-        if (section) {
-          section.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
+        document.getElementById(id).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       });
   }
 }

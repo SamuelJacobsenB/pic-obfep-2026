@@ -67,12 +67,22 @@ class DilatationItemCard extends HTMLElement {
 
         .item-card:hover,
         .item-card.selected {
-          background: rgba(255, 153, 0, 0.1);
-          border-color: var(--accent-orange);
+          box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+
+          transform: translateY(-5px);
+        }
+
+        .item-card:hover {
           color: var(--accent-orange);
 
-          box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
-          transform: translateY(-5px);
+          border-color: var(--accent-orange);
+        }
+
+        .item-card.selected {
+          color: var(--accent-orange);
+          background: rgba(255, 153, 0, 0.1);
+
+          border-color: var(--accent-orange);
         }
 
         .icon {

@@ -56,8 +56,8 @@ class MaterialItemCard extends HTMLElement {
 
           background-color: white;
 
-          width: clamp(40px, 20vw, 80px);
-          height: clamp(80px, 20vh, 140px);
+          width: clamp(50px, 20vw, 90px);
+          height: clamp(90px, 20vh, 150px);
 
           padding: 0.5rem 1rem;
 
@@ -72,12 +72,19 @@ class MaterialItemCard extends HTMLElement {
 
         .item-card:hover,
         .item-card.selected {
-          background: rgb(21 101 192 / 10%);
-          border-color: var(--primary-blue);
-
           box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
 
           transform: translateY(-5px);
+        }
+
+        .item-card:hover {
+          border-color: var(--primary-blue);
+        }
+
+        .item-card.selected {
+          background: rgb(21 101 192 / 10%);
+
+          border-color: var(--primary-blue);
         }
 
         img {
@@ -87,6 +94,16 @@ class MaterialItemCard extends HTMLElement {
 
         .name {
           font-size: 1.2rem;
+
+          transition: color 0.2s ease;
+        }
+
+        .item-card:hover .name {
+          color: var(--primary-blue);
+        }
+
+        .item-card.selected .name {
+          color: var(--primary-blue);
         }
 
         .check {
